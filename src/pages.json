@@ -1,5 +1,5 @@
 {
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+	"pages": [ 
 		{
 			"path": "pages/index/index",
 			"style": {
@@ -12,5 +12,25 @@
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar":{
+		"list":[
+			{
+				"pagePath": "pages/index/index",
+				"text":"救援网站",
+				"iconPath":"/static/images/手机.png",
+				"selectedIconPath":"/static/images/手机active.png"
+			},{
+				"pagePath": "pages/index/index",
+				"text":"呼叫120",
+				"iconPath":"/static/images/呼叫.png",
+				"selectedIconPath":"/static/images/呼叫active.png"
+			},{
+				"pagePath": "pages/index/index",
+				"text":"我的",
+				"iconPath":"/static/images/我的.png",
+				"selectedIconPath":"/static/images/我的active.png"
+			}
+		]
 	}
 }

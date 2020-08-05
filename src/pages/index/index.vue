@@ -1,49 +1,95 @@
 <template>
-	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view>
-			<text class="title">{{title}}</text>
-		</view>
-	</view>
+  <view>
+    <view class="swiperWrap">
+      <!-- 轮播组件 -->
+      <myswiper></myswiper>
+    </view>
+    <view>
+      <!-- 菜单 -->
+      <view class="navContent">
+        <view class="mynav">
+          <view class="navitem">
+            <img class="navImg" src="/static/images/1.png" alt />
+            急救指南
+          </view>
+          <view class="navitem">
+            <img class="navImg" src="/static/images/2.png" alt />
+            急救动态
+          </view>
+          <view class="navitem">
+            <img class="navImg" src="/static/images/3.png" alt />
+            服务网点
+          </view>
+        </view>
+        <!-- 第二行菜单 -->
+        <view class="mynav">
+          <view class="navitem">
+            <img class="navImg" src="/static/images/4.png" alt />
+            志愿者报名
+          </view>
+          <view class="navitem">
+            <img class="navImg" src="/static/images/5.png" alt />
+            急救视频
+          </view>
+          <view class="navitem">
+            <img class="navImg" src="/static/images/6.png" alt />
+            关于我们
+          </view>
+        </view>
+      </view>
+      <!-- 救援组件 -->
+      <help></help>
+
+      <!-- 新闻条 -->
+      <news></news>
+    </view>
+  </view>
 </template>
 
 <script>
-	export default {
-		data() {
-			return {
-				title: 'Hello'
-			}
-		},
-		onLoad() {
-
-		},
-		methods: {
-
-		}
-	}
+import help from "./help.vue";
+import news from "./news.vue";
+import myswiper from "./myswiper";
+export default {
+  data() {
+    return {
+      background: ["red", "color2", "color3"],
+      indicatorDots: true,
+      autoplay: true,
+      interval: 2000,
+      duration: 500
+    };
+  },
+  methods: {},
+  components: {
+    help,
+    news,
+    myswiper
+  }
+};
 </script>
 
-<style>
-	.content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
+<style lang="scss" scoped>
+.navContent{
+	margin: 40rpx 0;
+}
 
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin: 200rpx auto 50rpx auto;
-	}
-
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
-
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
-	}
+.mynav {
+  display: flex;
+}
+.navitem {
+  flex: 1;
+  text-align: center;
+  font-size: 0.8em;
+  color:rgb(104, 98, 98);
+  margin-top: 14rpx;
+  
+}
+.navImg {
+  height: 70rpx;
+  width: 70rpx;
+  display: block;
+  margin: 0 auto;
+  margin-top: 10rpx;
+}
 </style>
